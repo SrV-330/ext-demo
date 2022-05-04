@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "ext-demo",
+    "description": "vue3版本的chrome插件",
+    "version": "1.0.0",
+    "browser_action": {
+     "default_title": "ext-demo",
+     "default_popup": "popup.html"
+    },
+    "permissions": [],
+    "background": {
+     "scripts": ["js/background.js"]
+    },
+    "icons": {
+     
+    },
+    "content_scripts": [
+     {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": [],
+      "js": [],
+      "run_at": "document_idle"
+     }
+    ],
+    "web_accessible_resources": ["js/inject.js"]
+   }

@@ -1,0 +1,29 @@
+{
+    "name": "ext-demo",
+    "description": "vue3版本的chrome插件",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [],
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "icons": {
+        "48": "assets/icon48.png"
+    },
+    "action": {
+        "default_title": "Click to view a popup",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "css": [ "css/popup.css"],
+            "js": [
+                "js/chunk-vendors.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
